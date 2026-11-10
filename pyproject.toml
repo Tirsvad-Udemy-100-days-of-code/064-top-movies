@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "top-movies"
-version = "0.1.0"
+version = "1.0.0"
 description = "Day 64 of 100 Days of Code: a Flask website that ranks your favourite movies."
 readme = "README.md"
 requires-python = ">=3.13"
