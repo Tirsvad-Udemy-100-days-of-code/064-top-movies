@@ -32,6 +32,7 @@ updated whenever an artifact instance is created or reviewed.
 | [MIL-005] | MIL | en | it | [BC-001], [SA-001] | - | [RC-007], [RC-014] |
 | [MIL-006] | MIL | en | it | [BC-001], [SA-001] | - | [RC-008], [RC-015] |
 | [MIL-007] | MIL | en | it | [BC-001], [SA-001] | - | [RC-009] |
+| docs/wiki | Wiki | en, da, ms | it | [MIL-007] | - | [RC-016] |
 
 ## Concern Coverage
 
@@ -78,3 +79,4 @@ updated whenever an artifact instance is created or reviewed.
 [RC-013]: ./reviews/rc-013-code-mil-004.md
 [RC-014]: ./reviews/rc-014-code-mil-005.md
 [RC-015]: ./reviews/rc-015-code-mil-006.md
+[RC-016]: ./reviews/rc-016-wiki.md
