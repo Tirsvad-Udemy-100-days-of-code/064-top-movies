@@ -75,3 +75,45 @@ SEED_MOVIES = (
         "img_url": "https://image.tmdb.org/t/p/w500/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg",
     },
 )
+
+## Base URL of version 3 of the TMDB API.
+TMDB_API_BASE = "https://api.themoviedb.org/3"
+
+## Base URL of TMDB poster images, at the w500 size.
+TMDB_IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500"
+
+## Poster used when TMDB has no poster for a movie.
+TMDB_PLACEHOLDER_IMAGE_URL = "https://placehold.co/500x750?text=No+poster"
+
+## Seconds to wait for TMDB before a request fails.
+TMDB_TIMEOUT_SECONDS = 10
+
+## Year stored when TMDB gives no release date; a movie must have a year, 0 means unknown.
+TMDB_UNKNOWN_YEAR = 0
+
+## Longest movie title the add form accepts, equal to the size of the title column.
+TITLE_MAX_LENGTH = 250
+
+## Label of the title field of the add form.
+TITLE_LABEL = "Movie Title"
+
+## Label of the submit button of the add form.
+ADD_SUBMIT_LABEL = "Add Movie"
+
+## Name under which the movie catalogue is kept in the Flask extensions.
+EXTENSION_MOVIE_CATALOGUE = "movie_catalogue"
+
+## Message shown when the TMDB API key is not set.
+MSG_CATALOGUE_NOT_CONFIGURED = (
+    "The movie database is not configured. Set the environment variable "
+    f"{ENV_TMDB_API_KEY} to your TMDB API key and restart the website."
+)
+
+## Message shown when the movie database cannot be reached or answers badly.
+MSG_CATALOGUE_FAILED = "The movie database could not be reached. Please try again later."
+
+## HTTP status when the catalogue is not configured.
+HTTP_SERVICE_UNAVAILABLE = 503
+
+## HTTP status when the catalogue fails.
+HTTP_BAD_GATEWAY = 502
