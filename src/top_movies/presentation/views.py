@@ -51,3 +51,21 @@ def edit() -> str | Response:
     return render_template(
         "edit.html", movie=movie, form=form, subheading=constants.EDIT_SUBHEADING
     )
+
+
+@main.route("/delete")
+def delete() -> Response:
+    """!
+    @brief Delete the movie named by the id query parameter.
+
+    This changes state on GET, as the lecture does, so the Delete button can be a plain link.
+    A missing or non-numeric id answers 400, an id with no movie answers 404.
+    @return A redirect to the home page.
+    """
+    movie_id = request.args.get("id", type=int)
+    if movie_id is None:
+        abort(400)
+    movie = db.get_or_404(Movie, movie_id)
+    db.session.delete(movie)
+    db.session.commit()
+    return redirect(url_for("main.home"))
