@@ -9,7 +9,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-10 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | pending |
+| 2026-11-10 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [c015885] |
 
 ---
 
@@ -71,3 +71,4 @@ updated whenever an artifact instance is created or reviewed.
 [RC-008]: ./reviews/rc-008-mil-006.md
 [RC-009]: ./reviews/rc-009-mil-007.md
 [SA-001]: ../stakeholder-analysis.md
+[c015885]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/064-top-movies/commit/c015885544ba82f59729d068bc55c5d2a1f2bb7c
