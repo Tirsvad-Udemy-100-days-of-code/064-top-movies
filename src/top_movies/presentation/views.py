@@ -9,6 +9,7 @@ from werkzeug.wrappers import Response
 from top_movies import constants
 from top_movies.application.errors import CatalogueError, CatalogueNotConfiguredError
 from top_movies.application.ports import MovieCatalogue
+from top_movies.domain.ranking import rank_by_rating
 from top_movies.infrastructure.database import Movie, db
 from top_movies.presentation.forms import FindMovieForm, RateMovieForm
 
@@ -19,11 +20,15 @@ main = Blueprint("main", __name__)
 @main.route("/")
 def home() -> str:
     """!
-    @brief Show every movie as a card.
+    @brief Show every movie as a card, the best rated first.
+
+    The ranking of each movie is recalculated from the ratings and stored.
     @return The rendered home page.
     """
     result = db.session.execute(db.select(Movie).order_by(Movie.id))
-    movies = result.scalars().all()
+    movies = rank_by_rating(result.scalars().all())
+    if db.session.dirty:
+        db.session.commit()
     return render_template(
         "index.html",
         movies=movies,
