@@ -27,7 +27,7 @@ updated whenever an artifact instance is created or reviewed.
 | [SA-001] | SA | en | it | [BC-001] | [MIL-001] | [RC-002] |
 | [MIL-001] | MIL | en | it | [BC-001], [SA-001] | - | [RC-003], [RC-010] |
 | [MIL-002] | MIL | en | it | [BC-001], [SA-001] | - | [RC-004], [RC-011] |
-| [MIL-003] | MIL | en | it | [BC-001], [SA-001] | - | [RC-005] |
+| [MIL-003] | MIL | en | it | [BC-001], [SA-001] | - | [RC-005], [RC-012] |
 | [MIL-004] | MIL | en | it | [BC-001], [SA-001] | - | [RC-006] |
 | [MIL-005] | MIL | en | it | [BC-001], [SA-001] | - | [RC-007] |
 | [MIL-006] | MIL | en | it | [BC-001], [SA-001] | - | [RC-008] |
@@ -74,3 +74,4 @@ updated whenever an artifact instance is created or reviewed.
 [c015885]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/064-top-movies/commit/c015885544ba82f59729d068bc55c5d2a1f2bb7c
 [RC-010]: ./reviews/rc-010-code-mil-001.md
 [RC-011]: ./reviews/rc-011-code-mil-002.md
+[RC-012]: ./reviews/rc-012-code-mil-003.md
