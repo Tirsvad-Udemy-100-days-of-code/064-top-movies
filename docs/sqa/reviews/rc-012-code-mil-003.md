@@ -9,7 +9,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-10 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | pending |
+| 2026-11-10 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [93172ad] |
 
 ---
 
@@ -59,3 +59,4 @@ Go - The code meets all mandatory criteria. Autonomous stand-in review, not inde
 
 [MIL-003]: ../../milestones/mil-003-edit-movie.md
 [QC-PY-001]: ../../../framework/qc/code/qc-programming-python.md
+[93172ad]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/064-top-movies/commit/93172ad741a70db6acfe39c758504bd0cd5a35a3
