@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+  <h1 class="heading">{{ heading }}</h1>
+  <p class="description">{{ subheading }}</p>
+  {% for movie in movies %}
+  <div class="card" data-testid="movie-card">
+    <div class="front" style="background-image: url('{{ movie.img_url }}');">
+      <p class="large-number">{{ movie.ranking }}</p>
+    </div>
+    <div class="back">
+      <div>
+        <div class="title">{{ movie.title }} <span class="release_date">({{ movie.year }})</span></div>
+        <div class="review">{{ movie.review }}</div>
+        <div class="rating">
+          <span class="rating-value">{{ movie.rating }}</span><span class="rating-max">/10</span>
+        </div>
+        <p class="overview">{{ movie.description }}</p>
+        <a href="#" class="button">Update</a>
+        <a href="#" class="button delete-button">Delete</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+<div class="container text-center add">
+  <a href="#" class="button">Add Movie</a>
+</div>
+{% endblock %}
