@@ -1,0 +1,48 @@
+rules:
+  - id: top-movies.flask-debug-true
+    languages: [python]
+    severity: ERROR
+    message: Flask debug mode must not be enabled in committed code.
+    pattern-either:
+      - pattern: $APP.run(..., debug=True, ...)
+      - pattern: app.debug = True
+  - id: top-movies.requests-without-timeout
+    languages: [python]
+    severity: ERROR
+    message: HTTP calls must set a timeout.
+    patterns:
+      - pattern-either:
+          - pattern: requests.get(...)
+          - pattern: requests.post(...)
+      - pattern-not: requests.get(..., timeout=..., ...)
+      - pattern-not: requests.post(..., timeout=..., ...)
+  - id: top-movies.eval-exec
+    languages: [python]
+    severity: ERROR
+    message: eval and exec on dynamic input are forbidden.
+    pattern-either:
+      - pattern: eval(...)
+      - pattern: exec(...)
+  - id: top-movies.subprocess-shell-true
+    languages: [python]
+    severity: ERROR
+    message: subprocess with shell=True invites command injection.
+    pattern: subprocess.$F(..., shell=True, ...)
+  - id: top-movies.hardcoded-secret
+    languages: [python]
+    severity: ERROR
+    message: Do not hard-code secrets, tokens or API keys; read them from the environment.
+    patterns:
+      - pattern: $NAME = "..."
+      - metavariable-regex:
+          metavariable: $NAME
+          regex: ^(?!ENV_)(?i).*(api_key|token|password|passwd)$
+      - pattern-not: $NAME = ""
+  - id: top-movies.raw-sql-format
+    languages: [python]
+    severity: ERROR
+    message: Build SQL with bound parameters, not string formatting.
+    pattern-either:
+      - pattern: $DB.execute(f"...")
+      - pattern: $DB.execute("..." % ...)
+      - pattern: $DB.execute("...".format(...))
