@@ -1,0 +1,4 @@
+# Follow the scripts that a script sources (the same as shellcheck -x),
+# looked up from the directory of the script that sources them.
+external-sources=true
+source-path=SCRIPTDIR
