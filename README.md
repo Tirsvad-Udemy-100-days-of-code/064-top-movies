@@ -67,7 +67,13 @@ export TMDB_API_KEY=your-key-here   # PowerShell: $env:TMDB_API_KEY = "your-key-
 python -m flask --app top_movies run
 ```
 
-Open <http://127.0.0.1:5000/>. The database is created in `instance/movies.db`. The application features are added step by step; the sections below are filled as each lecture step is delivered.
+Open <http://127.0.0.1:5000/>. The SQLite database `movies.db` is created in the Flask instance folder (`src/instance/` when you run from source). Load the two example movies of the lecture with `python -m flask --app top_movies seed` (safe to run twice).
+
+### 🎞️ Lecture steps
+
+| Step | What it adds | Screenshot |
+| --- | --- | --- |
+| Requirement 1 | The home page lists the movies stored in SQLite | ![Home page with two movie cards](docs/screenshots/r1-home.png) |
 
 ## 🧪 Tests
 

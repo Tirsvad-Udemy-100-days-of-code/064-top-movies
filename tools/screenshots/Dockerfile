@@ -7,7 +7,7 @@ RUN apt-get update \
     && pip install --no-cache-dir playwright \
     && python -m playwright install --with-deps chromium \
     && chmod -R a+rX /opt/pw \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 RUN useradd --create-home shot
 COPY entrypoint.sh /entrypoint.sh
 COPY capture.py /opt/capture.py
