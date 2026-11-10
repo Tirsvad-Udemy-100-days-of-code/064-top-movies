@@ -9,7 +9,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-10 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | pending |
+| 2026-11-10 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [a2c301b] |
 
 ---
 
@@ -59,3 +59,4 @@ Go - The code meets all mandatory criteria. Autonomous stand-in review, not inde
 
 [MIL-005]: ../../milestones/mil-005-add-movie-tmdb.md
 [QC-PY-001]: ../../../framework/qc/code/qc-programming-python.md
+[a2c301b]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/064-top-movies/commit/a2c301b7755e615e72d13bcd5a7300de759e023e
