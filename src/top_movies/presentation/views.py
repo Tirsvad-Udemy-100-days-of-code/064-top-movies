@@ -3,10 +3,12 @@
 @brief The pages of the website. View names follow the lecture.
 """
 
-from flask import Blueprint, render_template
+from flask import Blueprint, abort, redirect, render_template, request, url_for
+from werkzeug.wrappers import Response
 
 from top_movies import constants
 from top_movies.infrastructure.database import Movie, db
+from top_movies.presentation.forms import RateMovieForm
 
 ## Blueprint that holds every page.
 main = Blueprint("main", __name__)
@@ -25,4 +27,27 @@ def home() -> str:
         movies=movies,
         heading=constants.HOME_HEADING,
         subheading=constants.HOME_SUBHEADING,
+    )
+
+
+@main.route("/edit", methods=["GET", "POST"])
+def edit() -> str | Response:
+    """!
+    @brief Change the rating and the review of the movie named by the id query parameter.
+
+    A missing or non-numeric id answers 400, an id with no movie answers 404.
+    @return The edit form, or a redirect to the home page after a valid submit.
+    """
+    movie_id = request.args.get("id", type=int)
+    if movie_id is None:
+        abort(400)
+    movie = db.get_or_404(Movie, movie_id)
+    form = RateMovieForm(obj=movie)
+    if form.validate_on_submit():
+        movie.rating = form.rating.data
+        movie.review = form.review.data
+        db.session.commit()
+        return redirect(url_for("main.home"))
+    return render_template(
+        "edit.html", movie=movie, form=form, subheading=constants.EDIT_SUBHEADING
     )

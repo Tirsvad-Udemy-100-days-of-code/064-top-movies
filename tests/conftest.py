@@ -19,7 +19,9 @@ def app() -> Iterator[Flask]:
     @brief Application bound to a fresh in-memory SQLite database.
     @return The application, with its tables created.
     """
-    application = create_app({"TESTING": True, "SQLALCHEMY_DATABASE_URI": "sqlite://"})
+    application = create_app(
+        {"TESTING": True, "SQLALCHEMY_DATABASE_URI": "sqlite://", "WTF_CSRF_ENABLED": False}
+    )
     yield application
     with application.app_context():
         db.session.remove()
