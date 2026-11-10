@@ -24,6 +24,27 @@ HOME_HEADING = "My Top 10 Movies"
 ## Sub title shown under the heading of the home page.
 HOME_SUBHEADING = "These are my all time favourite movies."
 
+## Sub title shown under the movie title on the edit page.
+EDIT_SUBHEADING = "Edit Movie Rating"
+
+## Lowest rating a movie can get.
+RATING_MIN = 0
+
+## Highest rating a movie can get.
+RATING_MAX = 10
+
+## Longest review, equal to the size of the review column.
+REVIEW_MAX_LENGTH = 250
+
+## Label of the rating field of the edit form.
+RATING_LABEL = "Your Rating Out of 10 e.g. 7.5"
+
+## Label of the review field of the edit form.
+REVIEW_LABEL = "Your Review"
+
+## Label of the submit button of the edit form.
+SUBMIT_LABEL = "Done"
+
 ## Movies stored by the seed command: the two examples of the lecture.
 SEED_MOVIES = (
     {
