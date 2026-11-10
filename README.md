@@ -19,8 +19,8 @@ The project follows the five requirements of the lecture, one step at a time. Ea
 
 | Folder | What it is for |
 | --- | --- |
-| `src/top_movies/` | The Flask application (`constants.py` holds the constants) |
-| `tests/` | pytest tests; they need no network and no TMDB key |
+| `src/top_movies/` | The Flask application in layers: `domain` (ranking rule), `application` (catalogue port), `infrastructure` (database, TMDB client), `presentation` (views, forms, templates); `constants.py` holds the constants |
+| `tests/` | pytest tests in `unit`, `integration` and `e2e`; they need no network and no TMDB key |
 | `docs/` | Project documents, screenshots (`docs/screenshots/`) and the wiki sources |
 | `scripts/` | The local opengrep scan |
 | `tools/screenshots/` | Docker tool that captures the screenshots without using your desktop |
@@ -77,6 +77,7 @@ Open <http://127.0.0.1:5000/>. The SQLite database `movies.db` is created in the
 | Requirement 2 | The Update button opens a WTForms form to change the rating and review | ![Edit form for Phone Booth](docs/screenshots/r2-edit.png) |
 | Requirement 3 | The Delete button removes a movie (screenshot: the home page after deleting Avatar) | ![Home page after deleting a movie](docs/screenshots/r3-delete.png) |
 | Requirement 4 | Add Movie searches TMDB, lists the matches, stores the chosen movie and opens its edit page | ![Add page](docs/screenshots/r4-add.png) ![Select page](docs/screenshots/r4-select.png) ![Edit page of a new movie](docs/screenshots/r4-edit-new.png) |
+| Requirement 5 | The home page ranks the movies by rating, best first (screenshot: a new movie rated 9.2 becomes number 1) | ![Ranked home page](docs/screenshots/r5-ranking.png) |
 
 ## 🧪 Tests
 
