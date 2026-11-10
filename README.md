@@ -75,6 +75,7 @@ Open <http://127.0.0.1:5000/>. The SQLite database `movies.db` is created in the
 | --- | --- | --- |
 | Requirement 1 | The home page lists the movies stored in SQLite | ![Home page with two movie cards](docs/screenshots/r1-home.png) |
 | Requirement 2 | The Update button opens a WTForms form to change the rating and review | ![Edit form for Phone Booth](docs/screenshots/r2-edit.png) |
+| Requirement 3 | The Delete button removes a movie (screenshot: the home page after deleting Avatar) | ![Home page after deleting a movie](docs/screenshots/r3-delete.png) |
 
 ## 🧪 Tests
 
