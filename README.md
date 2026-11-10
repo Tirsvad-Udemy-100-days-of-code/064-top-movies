@@ -15,7 +15,7 @@ Day 64 of Udemy's "100 Days of Code": a Flask website that lists your favourite 
 
 ## 🧭 Overview
 
-The project follows the five requirements of the lecture, one step at a time. Each step has a milestone, tests, a screenshot and a wiki page in English, Danish and Bahasa Malaysia.
+The project follows the five requirements of the lecture, one step at a time. Each step has a milestone, tests, a screenshot and a wiki page in English, Danish and Bahasa Malaysia ([wiki][documentation]).
 
 | Folder | What it is for |
 | --- | --- |
