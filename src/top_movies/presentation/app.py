@@ -9,12 +9,22 @@ from typing import Any
 
 import click
 from flask import Flask
+from flask.cli import with_appcontext
 from flask_bootstrap import Bootstrap5
 
 from top_movies import constants
 from top_movies.infrastructure.database import db
 from top_movies.infrastructure.seed import seed_movies
 from top_movies.presentation.views import main
+
+
+@click.command("seed")
+@with_appcontext
+def seed_command() -> None:
+    """!
+    @brief Insert the example movies; safe to run more than once.
+    """
+    click.echo(f"Inserted {seed_movies()} movie(s).")
 
 
 def create_app(config: dict[str, Any] | None = None) -> Flask:
@@ -41,11 +51,5 @@ def create_app(config: dict[str, Any] | None = None) -> Flask:
     with app.app_context():
         db.create_all()
 
-    @app.cli.command("seed")
-    def seed_command() -> None:
-        """!
-        @brief Insert the example movies; safe to run more than once.
-        """
-        click.echo(f"Inserted {seed_movies()} movie(s).")
-
+    app.cli.add_command(seed_command)
     return app
