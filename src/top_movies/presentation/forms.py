@@ -25,3 +25,15 @@ class RateMovieForm(FlaskForm):  # type: ignore[misc]
         validators=[DataRequired(), Length(max=constants.REVIEW_MAX_LENGTH)],
     )
     submit = SubmitField(constants.SUBMIT_LABEL)
+
+
+class FindMovieForm(FlaskForm):  # type: ignore[misc]
+    """!
+    @brief Form that asks for the title of a movie to look up.
+    """
+
+    title = StringField(
+        constants.TITLE_LABEL,
+        validators=[DataRequired(), Length(max=constants.TITLE_MAX_LENGTH)],
+    )
+    submit = SubmitField(constants.ADD_SUBMIT_LABEL)

@@ -31,7 +31,7 @@ Source code carries Doxygen comments; build the reference with `doxygen Doxyfile
 
 - Python 3.13 or later, with the built-in `venv` module.
 - Runtime packages, installed by `pip` from `pyproject.toml`. Each is needed by the assignment: Flask (web framework), Flask-SQLAlchemy (SQLite database), Flask-WTF (forms), Bootstrap-Flask (page styling and form rendering) and requests (TMDB calls). There are no other runtime dependencies.
-- For the Add Movie page: a free TMDB API key in the environment variable `TMDB_API_KEY`. The tests do not need it.
+- For the Add Movie page: a free TMDB API key (TMDB account, Settings, API) in the environment variable `TMDB_API_KEY`. The tests and the screenshot tool use a fake catalogue and do not need it; without the key the Add page shows a message that says how to set it.
 - Optional tools: Doxygen (reference), Docker (screenshots) and opengrep (security scan).
 
 ## 🛠️ Setup
@@ -76,6 +76,7 @@ Open <http://127.0.0.1:5000/>. The SQLite database `movies.db` is created in the
 | Requirement 1 | The home page lists the movies stored in SQLite | ![Home page with two movie cards](docs/screenshots/r1-home.png) |
 | Requirement 2 | The Update button opens a WTForms form to change the rating and review | ![Edit form for Phone Booth](docs/screenshots/r2-edit.png) |
 | Requirement 3 | The Delete button removes a movie (screenshot: the home page after deleting Avatar) | ![Home page after deleting a movie](docs/screenshots/r3-delete.png) |
+| Requirement 4 | Add Movie searches TMDB, lists the matches, stores the chosen movie and opens its edit page | ![Add page](docs/screenshots/r4-add.png) ![Select page](docs/screenshots/r4-select.png) ![Edit page of a new movie](docs/screenshots/r4-edit-new.png) |
 
 ## 🧪 Tests
 
